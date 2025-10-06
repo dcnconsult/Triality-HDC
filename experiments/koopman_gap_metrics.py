@@ -10,5 +10,5 @@ def main():
     out = dict(R2=float(R2), R3=float(R3), lead=float(lead), second=float(second), gap=float(gap))
     with open("results/koopman_summary.json", "w") as f: json.dump(out, f, indent=2)
     plt.figure(); plt.hist(np.abs(evals), bins=40); plt.title('Koopman eigenvalue magnitudes')
-    plt.savefig('results/koopman_hist.png', dpi=160); print(out)
+    plt.savefig('results/koopman_hist.png', dpi=160)
 if __name__ == "__main__": main()

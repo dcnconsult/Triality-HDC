@@ -1,8 +1,11 @@
-# PowerShell script equivalent to Makefile
-# Run all metrics experiments for Triality-HDC
+# PowerShell script for metrics pipeline
+# Equivalent to: make all
 
 Write-Host "Running Triality v2.0 Metrics Pipeline..." -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Green
+
+# Ensure results directory exists
+New-Item -ItemType Directory -Force -Path "results" | Out-Null
 
 Write-Host ""
 Write-Host "[1/3] Running phi vs rational bicoherence metrics..." -ForegroundColor Yellow

@@ -8,21 +8,12 @@
 \date{\today}
 \begin{document}\maketitle
 \begin{abstract}
-We present a tractable framework with torus-fibered dynamics, tri-linear closure, a golden-ratio resonance ladder, and hypergraph limit cycles. A methods pipeline---bicoherence, diffusion-map torus recovery, Koopman spectra, and hyperdimensional encodings---yields falsifiable predictions. Code accompanies this manuscript.
+We present a tractable framework with torus-fibered dynamics, tri-linear closure, a golden-ratio resonance ladder, and hypergraph limit cycles. A methods pipeline---bicoherence, Koopman spectra, and HDC encodings---yields falsifiable predictions. Code accompanies this manuscript.
 \end{abstract}
-\section{Introduction} Motivation and prior work.
-\section{Geometry \& Ladder} Clifford torus, bundle over scale, proxy tension functional.
-\section{Tri-Linear Closure} Three-wave mixing Hamiltonian and selection rules; KAM/Diophantine rationale.
-\section{Retuning as Heteroclinic Motion} Transitions between invariant tori; latency $\sim |\Delta k|$.
-\section{Hypergraph Limit-Cycle Model} Stuart--Landau triadic couplings; order parameters; Koopman.
-\section{Methods} Bispectrum, diffusion maps, TDA, EDMD; simulation protocols.
-\section{Hyperdimensional Encoding} Encodings for triads $\times$ scales $\times$ geometry.
 \section{Results (Initial Validation)}
-\subsection{$\varphi$-Scaled Bicoherence Islands}
-Sharp, compact bicoherence peaks appear for $\varphi$-tuned triads; JSON metrics in \texttt{results/bic\_*.json}.
-\subsection{Triadic Limit-Cycle (Koopman Signature)}
-Dominant Koopman eigenvalue with spectral gap; summary in \texttt{results/koopman\_summary.json}.
-\subsection{Retuning Latency Law}
-Latency scales with $|\Delta k|$; fit in \texttt{results/latency\_fit.json}.
-\section{Discussion \& Limitations} Scope; modular biological hypotheses; future work.
+\paragraph{$\varphi$ vs rational.} Compact bicoherence islands under $\varphi$-tuned triads; see JSON/CSVs in \texttt{results/}.
+\paragraph{Limit cycle signature.} Dominant Koopman eigenvalue with spectral gap.
+\paragraph{Latency law.} Retuning latency scales with $|\Delta k|$.
+\section{Ablations \& Robustness}
+No-triad control removes spectral gap and $R_3$; $\varphi$-convergents reduce compactness; noise stress erodes gap with threshold. Aggregated tables in \texttt{results/*.csv}.
 \end{document}
