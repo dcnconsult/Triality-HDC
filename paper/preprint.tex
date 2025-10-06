@@ -3,59 +3,26 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{bm}
-
-\title{Triadic Dynamics on a Toroidal Harmonic Bundle:\\
-\large $\varphi$-Scaled Resonances, Limit-Cycle Attractors, and a Hyperdimensional Encoding}
+\title{Triadic Dynamics on a Toroidal Harmonic Bundle:\\ \large $\varphi$-Scaled Resonances, Limit-Cycle Attractors, and a Hyperdimensional Encoding}
 \author{Darryl C. Novotny \and Collaborators}
 \date{\today}
-
-\begin{document}
-\maketitle
-
+\begin{document}\maketitle
 \begin{abstract}
-We present a tractable framework in which (i) dynamics evolve on a torus fibered by scale, (ii) interactions are tri-linear (triadic closure), (iii) a golden-ratio ladder organizes resonances and retuning, and (iv) macroscopic limit cycles arise in hypergraph-coupled oscillators. We provide operational proxies for geometric ``tension,'' derive $\varphi$-robustness via KAM-style conditions, and show that retuning has predictable latency with ladder distance. A methods pipeline---bispectrum/bicoherence, diffusion-map torus recovery, Koopman spectra, and hyperdimensional encodings---yields falsifiable predictions and cross-platform comparability (optics, superconducting circuits, classical oscillator networks, and neural signals). Open-source code accompanies this manuscript.
+We present a tractable framework with torus-fibered dynamics, tri-linear closure, a golden-ratio resonance ladder, and hypergraph limit cycles. A methods pipeline---bicoherence, diffusion-map torus recovery, Koopman spectra, and hyperdimensional encodings---yields falsifiable predictions. Code accompanies this manuscript.
 \end{abstract}
-
-\section{Introduction}
-Motivation; related work on three-wave mixing, quasi-periodicity and tori; our contributions.
-
-\section{Geometry and the $\varphi$-Ladder}
-Let $S^3\\subset\\mathbb{R}^4$. The Clifford torus embedding is
-\[
-\\iota(u,v)=\\tfrac{1}{\\sqrt{2}}(\\cos u,\\sin u,\\cos v,\\sin v).
-\]
-Define a bundle $\\pi:\\mathcal{B}\\to\\mathbb{R}$ with fiber $\\pi^{-1}(s)\\cong \\mathbb{T}^2$ and $s=\\log f$. The golden-ratio ladder obeys $s_{k+1}=s_k+\\log\\varphi$. We define a scale-dependent metric $g_s$ and a proxy tension functional $\\mathcal{T}(s)=\\lVert\\mathrm{II}_s\\rVert_{g_s}$.
-
-\section{Tri-Linear Closure and Resonance Web}
-Triad Hamiltonian for modes $a,b,c$:
-\[
-H=\\sum_m \\omega_m(s) a_m^\\* a_m + \\kappa(s)(a b c + a^\\* b^\\* c^\\*).
-\]
-Near-resonance selection rule $|\\pm\\omega_a\\pm\\omega_b\\pm\\omega_c|<\\epsilon$. Robustness of invariant tori follows from Diophantine/KAM conditions; $\varphi$ gives maximal persistence.
-
-\section{Retuning as Heteroclinic Motion}
-We model retuning as transitions along stable/unstable manifolds between invariant tori indexed by ladder step $k$. Latency scales with $|\\Delta s|=|\\Delta k|\\log\\varphi$.
-
-\section{Hypergraph Limit-Cycle Model}
-Stuart--Landau nodes with triadic edges:
-\[
-\\dot{z}_i=(\\alpha-|z_i|^2)z_i + \\sum_{(i,j,k)} J_{ijk} z_j z_k + \\eta_i.
-\]
-Order parameters: pairwise $R_2$ and triadic $R_3=\\langle e^{i(\\phi_i+\\phi_j+\\phi_k)}\\rangle$. Koopman spectra (EDMD) identify dominant limit cycles.
-
-\section{Methods and Measurements}
-Bispectrum/bicoherence; diffusion-map torus recovery; persistent homology; EDMD. Simulation protocols and datasets.
-
-\section{Hyperdimensional Encoding}
-Vectors for scales $\\mathbf{F}_k$, modes $\\mathbf{A}_i$, geometry $\\mathbf{T}$; triad binding and slice codes yield state vectors enabling retrieval and causal probing.
-
-\section{Predictions \& Experiments}
-(1) $\\varphi$-robustness vs. rationals (KAM plateau width); (2) rigid, narrow bicoherence islands at ladder indices; (3) retuning latency $\~\\,|\\Delta k|$.
-
-\section{Discussion and Limitations}
-Scope; modular biological hypotheses; future work (bundle connections, Spin(8) triality).
-
-\\paragraph{Code:} \\url{https://example.com} (replace with repo URL).
-
-\\end{document}
+\section{Introduction} Motivation and prior work.
+\section{Geometry \& Ladder} Clifford torus, bundle over scale, proxy tension functional.
+\section{Tri-Linear Closure} Three-wave mixing Hamiltonian and selection rules; KAM/Diophantine rationale.
+\section{Retuning as Heteroclinic Motion} Transitions between invariant tori; latency $\sim |\Delta k|$.
+\section{Hypergraph Limit-Cycle Model} Stuart--Landau triadic couplings; order parameters; Koopman.
+\section{Methods} Bispectrum, diffusion maps, TDA, EDMD; simulation protocols.
+\section{Hyperdimensional Encoding} Encodings for triads $\times$ scales $\times$ geometry.
+\section{Results (Initial Validation)}
+\subsection{$\varphi$-Scaled Bicoherence Islands}
+Sharp, compact bicoherence peaks appear for $\varphi$-tuned triads; JSON metrics in \texttt{results/bic\_*.json}.
+\subsection{Triadic Limit-Cycle (Koopman Signature)}
+Dominant Koopman eigenvalue with spectral gap; summary in \texttt{results/koopman\_summary.json}.
+\subsection{Retuning Latency Law}
+Latency scales with $|\Delta k|$; fit in \texttt{results/latency\_fit.json}.
+\section{Discussion \& Limitations} Scope; modular biological hypotheses; future work.
+\end{document}
