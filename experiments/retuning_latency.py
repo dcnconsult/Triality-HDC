@@ -12,14 +12,14 @@ def run_latency(kappa=0.03, wc=2.2, sweep=6):
         a,b,c = analytic_signal(Y)
         lat = retuning_latency(t, a,b,c)
         res.append((dk, lat))
-        print(f"Δk={dk:2d}  latency={lat}")
+        print(f"dk={dk:2d}  latency={lat}")
     return np.array(res)
 
 def main():
     res = run_latency()
     plt.figure()
     plt.plot(res[:,0], res[:,1], 'o-')
-    plt.xlabel('Δk (ladder steps, fractional)')
+    plt.xlabel('dk (ladder steps, fractional)')
     plt.ylabel('retuning latency (a.u.)')
     plt.title('Latency vs ladder distance')
     plt.savefig('results/latency_vs_ladder.png', dpi=160)

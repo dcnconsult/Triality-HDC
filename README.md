@@ -8,14 +8,13 @@ This repository operationalizes the Triality framework with a **torus-bundled ph
 python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run a φ-step triad sweep simulation and compute bicoherence
-python experiments/triad_sweep_phi.py
+# Run all experiments (recommended)
+python run_experiments.py
 
-# Toggle triadic hypergraph couplings and analyze Koopman spectrum
-python experiments/hypergraph_limit.py
-
-# Explore retuning latency vs ladder distance
-python experiments/retuning_latency.py
+# Or run individual experiments as modules:
+python -m experiments.triad_sweep_phi
+python -m experiments.hypergraph_limit
+python -m experiments.retuning_latency
 ```
 
 ## Layout
@@ -34,4 +33,6 @@ triality/
 ## Notes
 - This scaffold is **minimal but runnable**. It favors clarity over performance.
 - Biological claims are treated as **modular hypotheses**; all code targets physics/engineering observables first.
+- **Module Structure**: All directories (`core/`, `signals/`, `hdc/`, `hypergraph/`) are proper Python packages with `__init__.py` files.
+- **Running Scripts**: Use `python -m module.name` syntax or the convenience script `run_experiments.py`.
 - Licensed under Apache-2.0 (adjust as needed).
