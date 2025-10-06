@@ -96,9 +96,11 @@ The project includes a comprehensive pipeline for paper generation:
   - Creates: `results/summary_report.md` with overview
 
 ### **Paper Integration**
+- **Enhanced PDF**: Automatically generated with professional layout
 - **Figures**: Automatically copied to `paper/figures/` for LaTeX
 - **Tables**: CSV files ready for paper tables
 - **Metrics**: JSON files for quantitative results
+- **Complete Paper**: 8-page publication-ready PDF with all sections
 
 ## Cross-Platform Compatibility
 

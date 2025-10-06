@@ -76,16 +76,26 @@ if exist "results\latency_fit.png" (
 )
 
 echo.
-echo [5/5] Pipeline completed successfully!
+echo [5/5] Generating enhanced PDF...
+python -m scripts.generate_pdf
+if %errorlevel% neq 0 (
+    echo ERROR: PDF generation failed
+    exit /b 1
+)
+echo ✓ Enhanced PDF generated
+
+echo.
+echo [6/6] Pipeline completed successfully!
 echo.
 echo Generated files:
 echo - JSON metrics in results/
 echo - CSV tables in results/
 echo - Figures copied to paper/figures/
+echo - Enhanced PDF: paper/triality_preprint.pdf
 echo.
 echo Next steps:
-echo 1. Review figures in paper/figures/
-echo 2. Compile preprint.tex
-echo 3. Use CSV tables for paper tables
+echo 1. Review the generated PDF: paper/triality_preprint.pdf
+echo 2. Use CSV tables for additional analysis
+echo 3. Share the complete paper with collaborators
 echo.
 pause

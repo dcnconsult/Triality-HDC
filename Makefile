@@ -9,5 +9,7 @@ ablations:
 	python -m experiments.ablations
 aggregate:
 	python -m scripts.aggregate
+pdf:
+	python -m scripts.generate_pdf
 full:
-	make all && make ablations && make aggregate
+	make all && make ablations && make aggregate && make pdf

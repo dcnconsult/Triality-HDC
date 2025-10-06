@@ -42,14 +42,11 @@ pip install -r requirements.txt
 make full                       # Makefile (Unix/Linux)
 ```
 
-### **3. Compile LaTeX Paper**
+### **3. Enhanced PDF Generation (Automatic)**
 ```bash
-# Navigate to paper directory
-cd paper
-
-# Compile the preprint
-pdflatex preprint.tex
-# OR use your preferred LaTeX compiler
+# PDF is automatically generated as part of the pipeline
+# No LaTeX required - pure Python implementation
+# Output: paper/triality_preprint.pdf (8 pages, publication-ready)
 ```
 
 ### **4. Use Generated Data in Paper**

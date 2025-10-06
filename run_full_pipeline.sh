@@ -86,49 +86,26 @@ else
 fi
 
 echo ""
-echo "[5/5] Generating summary report..."
-
-# Generate summary report
-cat > "results/pipeline_summary.md" << 'EOF'
-# Triality v2.0 - Pipeline Results Summary
-
-## Generated Files
-
-### JSON Metrics
-- bic_phi.json, bic_rational.json - Bicoherence metrics
-- koopman_summary.json - Koopman eigenvalue analysis
-- latency_fit.json - Retuning latency fit parameters
-
-### Ablation Studies
-- abl_no_triads.json - No triads (J=0) analysis
-- abl_phi_convergents.json - φ vs convergents comparison
-- abl_noise_stress.json - Noise stress test results
-
-### CSV Tables
-- bicoherence_summary.csv - Bicoherence comparison table
-- koopman_summary.csv - Koopman metrics table
-- latency_fit.csv - Latency fit parameters
-- ablation_*.csv - Ablation study tables
-
-### Figures
-- bico_phi.png, bico_rational.png - Bicoherence plots
-- koopman_hist.png - Koopman eigenvalue histogram
-- latency_fit.png - Latency vs ladder distance fit
-
-## Next Steps
-1. Review generated figures in paper/figures/
-2. Compile preprint.tex with updated figures
-3. Use CSV tables for paper tables
-4. Reference JSON metrics in Results section
-
-Generated: $(date)
-EOF
-
-echo "✓ Summary report generated: results/pipeline_summary.md"
+echo "[5/5] Generating enhanced PDF..."
+python -m scripts.generate_pdf
+if [ $? -ne 0 ]; then
+    echo "ERROR: PDF generation failed"
+    exit 1
+fi
+echo "✓ Enhanced PDF generated"
 
 echo ""
-echo "======================================="
-echo "Full pipeline completed successfully!"
-echo "Check results/ directory for all generated files."
-echo "Figures copied to paper/figures/ for LaTeX compilation."
+echo "[6/6] Pipeline completed successfully!"
+echo ""
+echo "Generated files:"
+echo "- JSON metrics in results/"
+echo "- CSV tables in results/"
+echo "- Figures copied to paper/figures/"
+echo "- Enhanced PDF: paper/triality_preprint.pdf"
+echo ""
+echo "Next steps:"
+echo "1. Review the generated PDF: paper/triality_preprint.pdf"
+echo "2. Use CSV tables for additional analysis"
+echo "3. Share the complete paper with collaborators"
+echo ""
 echo "======================================="

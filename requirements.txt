@@ -1,7 +1,7 @@
 numpy
 scipy
 scikit-learn
-matplotlib
+matplotlib >=3.5.0
 networkx
 numba
 pandas
